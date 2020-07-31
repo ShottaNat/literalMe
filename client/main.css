@@ -2,3 +2,16 @@ body {
   padding: 10px;
   font-family: sans-serif;
 }
+.man-body{
+	height: 350px;
+	width: 300px;
+	justify-content: center;
+}
+.n-body{
+	height: 350px;
+	width: 410px;
+	justify-content: center;
+}
+.c-text{
+	
+}
