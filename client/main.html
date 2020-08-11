@@ -48,7 +48,7 @@
 </template>
 
 <template name="myGallery">
-  <div class="row">
+  <!-- <div class="row"> -->
     {{#each allBooks}}
       <div class="col-4" id={{_id}}>
         <div class="card mb-4 shadow-sm ">
@@ -57,8 +57,8 @@
                 <p class="card-text c-text text-break "><h4>{{title}}</h4></p>
                 <p class="card-text"><h5>{{auth}}</h5></p>
                 <div>
-                  <i class="fa fa-thumbs-up rating" style="font-size:30px;color:blue"></i> 
-                  <i class="fa fa-thumbs-down rating" style="font-size:30px;color:green"></i> 
+                  <i class="fas fa-thumbs-up" style="font-size:30px;color:blue"></i> 
+                  <i class="fas fa-thumbsdown" style="font-size:30px;color:green"></i>
                 </div>       
                 <div class="d-flex justify-content-between align-items-center">
                   <div class="btn-group">
@@ -88,7 +88,7 @@
         </div>
       </div>
     </div>
-  </div>
+  <!-- </div> -->
 </template>
 
 <template name="myJumbo">
@@ -247,8 +247,8 @@
             <input type="text" class="form-control" id="viewPath" placeholder="Paste image path here" aria-label="Path" aria-describedby="basic-addon1">
           </div>
           <div class="input-group mb-3">
-            <div class="input-group-prepend">
-            <span class="input-group-text" id="basic-addon1">Description</span>
+            <div class="input-group-prepend " style="max-width: 200px;">
+            <span class="input-group-text text-muted" id="basic-addon1">Description</span>
             </div>
             <input type="text" class="form-control" id="viewDesc" placeholder="Enter the discription of the book" aria-label="Title" aria-describedby="basic-addon1">
           </div>

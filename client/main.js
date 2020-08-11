@@ -18,53 +18,49 @@ Template.myGallery.helpers({
 
 Template.myGallery.events({
     'click .js-delete'(event, instance) {
-	    console.log("deleting...");
-	    var myId = this._id;
-	    $("#deleteId").val(myId);
-	    $("#confirmModal").modal("show");
+        console.log("deleting...");
+        var myId = this._id;
+        $("#deleteId").val(myId);
+        $("#confirmModal").modal("show");
     },
 
-	'click .js-edit'(event, instance){
-	    $("#editImageModal").modal("show");
-		    var myId = this._id;
-		    console.log("let's edit "+myId);
-		    var eTitle = bookdb.findOne({_id:myId}).title;
-		    var ePath = bookdb.findOne({_id:myId}).path;
-		    var eAuth = bookdb.findOne({_id:myId}).auth;
-		    var eDesc = bookdb.findOne({_id:myId}).desc;
-		    $("#editId").val(myId);
-		    $("#editAuth").val(eAuth);
-		    $("#editTitle").val(eTitle);
-		    $("#editPath").val(ePath);
-		    $("#editDesc").val(eDesc);
-		    $(".editHolder").attr("src", ePath);
+    'click .js-edit'(event, instance){
+        $("#editImageModal").modal("show");
+            var myId = this._id;
+            console.log("let's edit "+myId);
+            var eTitle = bookdb.findOne({_id:myId}).title;
+            var ePath = bookdb.findOne({_id:myId}).path;
+            var eAuth = bookdb.findOne({_id:myId}).auth;
+            var eDesc = bookdb.findOne({_id:myId}).desc;
+            $("#editId").val(myId);
+            $("#editAuth").val(eAuth);
+            $("#editTitle").val(eTitle);
+            $("#editPath").val(ePath);
+            $("#editDesc").val(eDesc);
+            $(".editHolder").attr("src", ePath);
     },
     'click .js-view'(event, instance){
-    	$("#viewImagemodal").modal("show")
-        var myId = this._id;
-        console.log("let's edit "+myId);
-        var eTitle = bookdb.findOne({_id:myId}).title;
-        var ePath = bookdb.findOne({_id:myId}).path;
-        var eAuth = bookdb.findOne({_id:myId}).auth;
-        var eDesc = bookdb.findOne({_id:myId}).desc;
-        $("#viewId").val(myId);
-        $("#viewAuth").val(eAuth);
-        $("#viewTitle").val(eTitle);
-        $("#viewPath").val(ePath);
-        $("#viewDesc").val(eDesc);
-        $("viewHolder").attr("src", ePath);
-    	bookdb.insert({
-    		"desc": theDesc,
-    	})
-    	
-    	var eDesc = bookdb.findOne({_id:myId}).desc;
-    	console.log("Description Opening")
+        $("#viewImagemodal").modal("show");
+            var myId = this._id;
+            console.log("let's view "+myId);
+            console.log("Description Opening")
+            var vTitle = bookdb.findOne({_id:myId}).title;
+            var vPath = bookdb.findOne({_id:myId}).path;
+            var vAuth = bookdb.findOne({_id:myId}).auth;
+            var vDesc = bookdb.findOne({_id:myId}).desc;
+            $("#viewId").val(myId);
+            $("#viewAuth").val(vAuth);
+            $("#viewTitle").val(vTitle);
+            $("#viewPath").val(vPath);
+            $("#viewDesc").val(vDesc);
+            $(".viewHolder").attr("src", vPath);       
+        
     },
- 	'click .js-confirm'(event, instance){
-	    var myId = $("#deleteId").val();
-	    $("#"+myId).fadeOut('slow',function(){
-	     bookdb.remove({_id:myId});
-	     console.log(myId);
+    'click .js-confirm'(event, instance){
+        var myId = $("#deleteId").val();
+        $("#"+myId).fadeOut('slow',function(){
+         bookdb.remove({_id:myId});
+         console.log(myId);
     });
   },
     "click .rating"(event) {
@@ -80,21 +76,21 @@ Template.myGallery.events({
 });
 
 Template.myJumbo.events({
-	'click .js-addbook'(event, instance){
+    'click .js-addbook'(event, instance){
      console.log("Open modal");
     },
 
-	'click .js-close'(event, instance){
+    'click .js-close'(event, instance){
     console.log("closing modal");
     $("#bookTitle").val("");
-	$("#bookAuth").val("");
-	$("#bookPath").val("");
-	$("#bookDesc").val("");
+    $("#bookAuth").val("");
+    $("#bookPath").val("");
+    $("#bookDesc").val("");
     $(".placeHolder").attr("src","download.png");
     },
 
-	'click .js-save'(event, instance){
-	var theTitle = $("#bookTitle").val();
+    'click .js-save'(event, instance){
+    var theTitle = $("#bookTitle").val();
     var theAuth = $("#bookAuth").val();
     var theDesc = $("#bookDesc").val();
     var thePath = $("#bookPath").val();
@@ -140,6 +136,7 @@ Template.editImage.events({
     );
   } 
 });
+
 
 Template.BookDescription.events({
 
